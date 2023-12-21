@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ls-analytics-web
+  description: LS Analytics web
+  annotations:
+    github.com/project-slug: loadsmart/ls-analytics-web
+  tags:
+    - generic
+    - internet-facing
+spec:
+  type: website
+  lifecycle: experimental
+  owner: data-engineering
