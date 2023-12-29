@@ -2,34 +2,28 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { TopNavigation } from '@loadsmart/loadsmart-ui'
+import { EmbeddedReport } from './components/EmbeddedReport'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <TopNavigation>
+        <TopNavigation.Logo url='/'>
+          <img src='loadsmart_logo.svg' alt='The Logo' />
+        </TopNavigation.Logo>
+        <TopNavigation.Menu align='right'>
+          <TopNavigation.Menu.Item label='Managed Anatlytics' url='#'/>
+          <TopNavigation.Menu.Item label='logout' onClick={() => {
+            console.log("logout")
+          }} />
+        </TopNavigation.Menu>
+      </TopNavigation>
+      <EmbeddedReport />
     </>
-  )
+  );
 }
 
 export default App
